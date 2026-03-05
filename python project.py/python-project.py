@@ -73,3 +73,31 @@ while True:
         print(f"You selected {selected_item['name']} which costs ${selected_item['price']:.2f}.")
     else:
         print("Invalid selection. Please try again.")
+# write a program that show to do list and allows the user to select a task. The program should then display the details of the selected task.
+To_do_list = {
+    "1": {"task": "Buy groceries", "details": "Milk, Eggs, Bread, and Fruits"},
+    "2": {"task": "Clean the house", "details": "Vacuum, Dust, and Mop the floors"},
+    "3": {"task": "Finish homework", "details": "Complete math and science assignments"},
+    "4": {"task": "Exercise", "details": "Go for a 30-minute run and do strength training"},
+    "5": {"task": "Call family", "details": "Catch up with parents and siblings"},
+    "6": {"task": "Pay bills", "details": "Electricity, Water, and Internet"},
+    "7": {"task": "Read a book", "details": "Read at least 20 pages of a novel"},
+    "8": {"task": "Cook dinner", "details": "Prepare a healthy meal with vegetables and protein"},
+    "9": {"task": "Organize workspace", "details": "Declutter desk and organize files"},
+    "10": {"task": "Plan weekend trip", "details": "Research destinations and make reservations"}
+}
+print("Welcome to your To-Do List!")
+print("Please select a task from the list below:")
+for key, task in To_do_list.items():
+    print(f"{key}. {task['task']}") 
+while True:    
+    selection = input("Enter the number of the task you want to view (or 'exit' to quit): ")
+    if selection.lower() == 'exit':
+        print("Thank you for using the To-Do List! Goodbye!")
+        break
+    elif selection in To_do_list:
+        selected_task = To_do_list[selection]
+        print(f"You selected '{selected_task['task']}' which has the following details: {selected_task['details']}")    
+    else:
+        print("Invalid selection. Please try again.")
+        
