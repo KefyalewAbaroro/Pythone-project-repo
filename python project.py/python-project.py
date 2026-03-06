@@ -5,123 +5,121 @@
 # # Check if the user's selection is valid and display the price
 # # keep the program running until the user decides to exit
 # from asyncio import tasks
-
-
-# snack_menu = {
-#     "1": {"name": "Chips", "price": 1.50},
-#     "2": {"name": "Chocolate", "price": 2.00},
-#     "3": {"name": "Cookies", "price": 1.75},
-#     "4": {"name": "Soda", "price": 1.25},
-#     "5": {"name": "milkshake", "price": 1.75},
-#     "6": {"name": "Sandwich", "price": 2.50},
-#     "7": {"name": "Fruit Salad", "price": 3.00},
-#     "8": {"name": "Yogurt", "price": 1.00},
-#     "9": {"name": "Granola Bar", "price": 1.25},
-#     "10": {"name": "Ice Cream", "price": 2.50},
-#     "11": {"name": "cappuccino", "price": 1.50},
-#     "12": {"name": "Popcorn", "price": 1.75},
-# }
-# print("Welcome to the Snack Menu!")
-# print("Please select an item from the menu below:")
-# for key, item in snack_menu.items():
-#     print(f"{key}. {item['name']} - ${item['price']:.2f}")
-# while True:
-#     selection = input("Enter the number of the item you want to select (or 'exit' to quit): ")
-#     if selection.lower() == 'exit':
-#         calculate_total = input("Would you like to calculate the total cost of your selected items? (yes/no): ")
-#         if calculate_total.lower() == 'yes':
-#             total = sum(item['price'] for item in snack_menu.values())
-#             print(f"The subtotal cost of your selected items is: ${total:.2f}")
-#             tax = total * 0.07  # Assuming a tax rate of 7%
-#             total_with_tax = total + tax
-#             print(f"Total with tax: ${total_with_tax:.2f}")
-#         print("Thank you for visiting! Goodbye!")
-#         break
-#     elif selection in snack_menu:
-#         selected_item = snack_menu[selection]
-#         print(f"You selected {selected_item['name']} which costs ${selected_item['price']:.2f}.")
-#     else:
-#         print("Invalid selection. Please try again.")       
+snack_menu = {
+    "1": {"name": "Chips", "price": 1.50},
+    "2": {"name": "Chocolate", "price": 2.00},
+    "3": {"name": "Cookies", "price": 1.75},
+    "4": {"name": "Soda", "price": 1.25},
+    "5": {"name": "milkshake", "price": 1.75},
+    "6": {"name": "Sandwich", "price": 2.50},
+    "7": {"name": "Fruit Salad", "price": 3.00},
+    "8": {"name": "Yogurt", "price": 1.00},
+    "9": {"name": "Granola Bar", "price": 1.25},
+    "10": {"name": "Ice Cream", "price": 2.50},
+    "11": {"name": "cappuccino", "price": 1.50},
+    "12": {"name": "Popcorn", "price": 1.75},
+}
+print("Welcome to the Snack Menu!")
+print("Please select an item from the menu below:")
+for key, item in snack_menu.items():
+    print(f"{key}. {item['name']} - ${item['price']:.2f}")
+while True:
+    selection = input("Enter the number of the item you want to select (or 'exit' to quit): ")
+    if selection.lower() == 'exit':
+        calculate_total = input("Would you like to calculate the total cost of your selected items? (yes/no): ")
+        if calculate_total.lower() == 'yes':
+            total = sum(item['price'] for item in snack_menu.values())
+            print(f"The subtotal cost of your selected items is: ${total:.2f}")
+            tax = total * 0.07  # Assuming a tax rate of 7%
+            total_with_tax = total + tax
+            print(f"Total with tax: ${total_with_tax:.2f}")
+        print("Thank you for visiting! Goodbye!")
+        break
+    elif selection in snack_menu:
+        selected_item = snack_menu[selection]
+        print(f"You selected {selected_item['name']} which costs ${selected_item['price']:.2f}.")
+    else:
+        print("Invalid selection. Please try again.")       
 # # Write a program that shows predefined grocery items and allows the user to select an item. The program should then display the price of the selected item.
-# Grocery_menu ={
-#      "Apple": {"name": "Apple", "price": 0.50},
-#      "Banana": {"name": "Banana", "price": 0.30},
-#      "Bread": {"name": "Bread", "price": 2.00},
-#      "Milk": {"name": "Milk", "price": 1.50},
-#      "Eggs": {"name": "Eggs", "price": 2.50},
-#      "Cheese": {"name": "Cheese", "price": 3.00},
-#      "Chicken": {"name": "Chicken", "price": 5.00},
-#      "Rice": {"name": "Rice", "price": 1.00},
-#      "Pasta": {"name": "Pasta", "price": 1.50},
-#      "Tomatoes": {"name": "Tomatoes", "price": 0.80}
-# }
-# print("Welcome to the Grocery Menu!")
-# print("Please select an item from the menu below:")
-# for key, item in Grocery_menu.items():
-#     print(f"{key}. {item['name']} - ${item['price']:.2f}")
-# while True:
-#     selection = input("Enter the number of the item you want to select (or 'exit' to quit): ")
-#     if selection.lower() == 'exit':
-#         calculate_total = input("Would you like to calculate the total cost of your selected items? (yes/no): ")
-#         if calculate_total.lower() == 'yes':
-#             total = sum(item['price'] for item in Grocery_menu.values())
-#             print(f"The subtotal cost of your selected items is: ${total:.2f}")
-#             tax = total * 0.07  # Assuming a tax rate of 7%
-#             total_with_tax = total + tax
-#             print(f"Total with tax: ${total_with_tax:.2f}")
-#         print("Thank you for visiting! Goodbye!")
-#         break
-#     elif selection in Grocery_menu:
-#         selected_item = Grocery_menu[selection]
-#         print(f"You selected {selected_item['name']} which costs ${selected_item['price']:.2f}.")
-#     else:
-#         print("Invalid selection. Please try again.")
-# # write a program that show to do list and allows the user to select a task. The program should then display the details of the selected task.
-# # display to do list to the user
-# # define the to do list with tasks and their details
-# To_do_list = {
-#     "1": {"task": "Buy groceries", "details": "Milk, Eggs, Bread, and Fruits"},
-#     "2": {"task": "Clean the house", "details": "Vacuum, Dust, and Mop the floors"},
-#     "3": {"task": "Finish homework", "details": "Complete math and science assignments"},
-#     "4": {"task": "Exercise", "details": "Go for a 30-minute run and do strength training"},
-#     "5": {"task": "Call family", "details": "Catch up with parents and siblings"},
-#     "6": {"task": "Pay bills", "details": "Electricity, Water, and Internet"},
-#     "7": {"task": "Read a book", "details": "Read at least 20 pages of a novel"},
-#     "8": {"task": "Cook dinner", "details": "Prepare a healthy meal with vegetables and protein"},
-#     "9": {"task": "Organize workspace", "details": "Declutter desk and organize files"},
-#     "10": {"task": "Plan weekend trip", "details": "Research destinations and make reservations"}
-# }
-# print("Welcome to your To-Do List!")
-# print("Please select a task from the list below:")      
-# To_do_list = []
-# priorities = ["high", "medium", "low"]
-# while True:
-#     task = input("Enter a task (or type 'done' to finish): ")
-#     if task.lower() == "done":
-#         break
-#     priority = input("Enter the priority (high, medium, low): ")
-#     if priority.lower() in priorities:
-#         To_do_list.append((task, priority.lower()))
-#         To_do_list.sort(key=lambda x: priorities.index(x[1]))
-#     else:
-#         print("Invalid priority. Please enter 'high', 'medium', or 'low'.")
-# To_do_list.sort(key=lambda x: priorities.index(x[1]))
-# print("\nTo-Do List:")
-# for task, priority in To_do_list:
-#     print(f"{task} - {priority}")
-#     print("\nEnter the task you have completed (or type 'done' to finish): ")
-# while True:    
-#     completed_task = input()
-#     if completed_task.lower() == "done":
-#         break
-#     for task in To_do_list:
-#         if task[0].lower() == completed_task.lower():
-#             To_do_list.remove(task)
-#             print(f"Task '{completed_task}' marked as completed and removed from the list.")
-#             break
-# print("\nUpdated To-Do List:")
-# for task, priority in To_do_list:
-#     print(f"{task} - {priority}")
+Grocery_menu ={
+     "Apple": {"name": "Apple", "price": 0.50},
+     "Banana": {"name": "Banana", "price": 0.30},
+     "Bread": {"name": "Bread", "price": 2.00},
+     "Milk": {"name": "Milk", "price": 1.50},
+     "Eggs": {"name": "Eggs", "price": 2.50},
+     "Cheese": {"name": "Cheese", "price": 3.00},
+     "Chicken": {"name": "Chicken", "price": 5.00},
+     "Rice": {"name": "Rice", "price": 1.00},
+     "Pasta": {"name": "Pasta", "price": 1.50},
+     "Tomatoes": {"name": "Tomatoes", "price": 0.80}
+}
+print("Welcome to the Grocery Menu!")
+print("Please select an item from the menu below:")
+for key, item in Grocery_menu.items():
+    print(f"{key}. {item['name']} - ${item['price']:.2f}")
+while True:
+    selection = input("Enter the number of the item you want to select (or 'exit' to quit): ")
+    if selection.lower() == 'exit':
+        calculate_total = input("Would you like to calculate the total cost of your selected items? (yes/no): ")
+        if calculate_total.lower() == 'yes':
+            total = sum(item['price'] for item in Grocery_menu.values())
+            print(f"The subtotal cost of your selected items is: ${total:.2f}")
+            tax = total * 0.07  # Assuming a tax rate of 7%
+            total_with_tax = total + tax
+            print(f"Total with tax: ${total_with_tax:.2f}")
+        print("Thank you for visiting! Goodbye!")
+        break
+    elif selection in Grocery_menu:
+        selected_item = Grocery_menu[selection]
+        print(f"You selected {selected_item['name']} which costs ${selected_item['price']:.2f}.")
+    else:
+        print("Invalid selection. Please try again.")
+# write a program that show to do list and allows the user to select a task. The program should then display the details of the selected task.
+# display to do list to the user
+# define the to do list with tasks and their details
+To_do_list = {
+    "1": {"task": "Buy groceries", "details": "Milk, Eggs, Bread, and Fruits"},
+    "2": {"task": "Clean the house", "details": "Vacuum, Dust, and Mop the floors"},
+    "3": {"task": "Finish homework", "details": "Complete math and science assignments"},
+    "4": {"task": "Exercise", "details": "Go for a 30-minute run and do strength training"},
+    "5": {"task": "Call family", "details": "Catch up with parents and siblings"},
+    "6": {"task": "Pay bills", "details": "Electricity, Water, and Internet"},
+    "7": {"task": "Read a book", "details": "Read at least 20 pages of a novel"},
+    "8": {"task": "Cook dinner", "details": "Prepare a healthy meal with vegetables and protein"},
+    "9": {"task": "Organize workspace", "details": "Declutter desk and organize files"},
+    "10": {"task": "Plan weekend trip", "details": "Research destinations and make reservations"}
+}
+print("Welcome to your To-Do List!")
+print("Please select a task from the list below:")      
+To_do_list = []
+priorities = ["high", "medium", "low"]
+while True:
+    task = input("Enter a task (or type 'done' to finish): ")
+    if task.lower() == "done":
+        break
+    priority = input("Enter the priority (high, medium, low): ")
+    if priority.lower() in priorities:
+        To_do_list.append((task, priority.lower()))
+        To_do_list.sort(key=lambda x: priorities.index(x[1]))
+    else:
+        print("Invalid priority. Please enter 'high', 'medium', or 'low'.")
+To_do_list.sort(key=lambda x: priorities.index(x[1]))
+print("\nTo-Do List:")
+for task, priority in To_do_list:
+    print(f"{task} - {priority}")
+    print("\nEnter the task you have completed (or type 'done' to finish): ")
+while True:    
+    completed_task = input()
+    if completed_task.lower() == "done":
+        break
+    for task in To_do_list:
+        if task[0].lower() == completed_task.lower():
+            To_do_list.remove(task)
+            print(f"Task '{completed_task}' marked as completed and removed from the list.")
+            break
+print("\nUpdated To-Do List:")
+for task, priority in To_do_list:
+    print(f"{task} - {priority}")
 # # 4)	 Movie Ticket Booking Simulation
 # -	Simulate a movie theater booking system that:
 # •	Shows a list of available movie titles, showtimes, and seat prices.
@@ -184,3 +182,46 @@ print(" your booking has been confirmed. Enjoy your movie!")
 print(f"The total price for your movie tickets is: ${total_price:.2f}.")
 print(f"The subtotal price for your movie tickets is: ${subtotal_price:.2f}.")
 print(f"The tax amount for your movie tickets is: ${tax_amount:.2f}.")
+# # 5)	Create a basic quiz game that:
+# # •	Asks the user a series of multiple-choice questions.
+# # •	Tracks the user's score based on correct answers.
+# # •	Provides feedback after each question and a final score at the end of the quiz.
+my_quiz = [
+    {
+        "question": "The battle of Adwa is a battle between which two countries?",
+        "options": ["Ethiopia and Italy", "Ethiopia and France", "Ethiopia and Britain"],
+        "correct_answer": "Ethiopia and Italy"
+    },
+    {
+        "question": "Who was Nicolas Tesla?",
+        "options": ["inventor of the electric light bulb", "inventor of the radio", "inventor of the telephone"],
+        "correct_answer": "inventor of the radio"
+    },
+    {
+        "question": "What was the outcome Lichemeda agreement in 1878?",
+        "options": ["Accepttance of Yohaness II as king of king", "Menelik II becomes king of Ethiopia", "Italy gains control of Eritrea"],
+        "correct_answer": "Accepttance of Yohaness II as king of king"
+    },
+    {   "question": "Who wrote the novel 'Sememen'?",
+        "options": ["Fikremarkos desta", "Sisay Negusu", "Abe Gubegnaw"],
+        "correct_answer": "Sisay Negusu"
+    },
+    {   "question": "Nelson Mandela was imprisoned for how many years?",
+        "options": ["27 years", "30 years", "25 years"],
+        "correct_answer": "27 years",
+    }
+]
+score = 0
+for q in my_quiz:
+    print(q["question"])
+    for i, option in enumerate(q["options"]):
+        print(f"{i + 1}. {option}")
+    user_answer = input("Enter your answer (1, 2, or 3): ")
+    if user_answer == str(q["options"].index(q["correct_answer"]) + 1):
+        print("Correct!")
+        score += 1
+    else:
+        print("Incorrect.")
+print(f"Your final score is: {score}/{len(my_quiz)}")
+print("you are a great historian!")
+  
